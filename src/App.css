@@ -1,38 +1,177 @@
-.App {
+body {
+  background-color: #f3dcbc;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#drum-machine {
+  margin-top: 50px;
+  text-align: center;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 9px 16px 21px 7px rgba(0,0,0,0.27);
+  border-radius: 31px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#controls-buttons-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  padding: 10px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+#pads {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 90%;
+  margin: 10px auto;
+  padding-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drum-pad {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #f3dcbc ;
+  border: solid 2px #d8b687;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+#display{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+  width: 50%;
+  margin: auto;
+  border: solid 6px #d8b687;
+  border-radius: 5px;
+
+}
+
+#display p{
+  margin: 10px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #f3dcbc ;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: white;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color:  #e6e6e6;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Sound range */
+
+
+
+input[type=range]{
+    -webkit-appearance: none;
+    background-color: #f3dcbc;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+
+    height: 5px;
+    border: none;
+    background-color: white;
+    border-radius: 4px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #010100;
+    margin-top: -4px;
+    cursor: pointer
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+
+input[type=range]::-moz-range-track {
+
+  height: 5px;
+  background: white;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #010100;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+
+input[type=range]:focus::-moz-range-track {
+  background: white;
 }
